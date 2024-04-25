@@ -4,6 +4,7 @@ import os
 import json
 from tkinter import Tk, Canvas, Button, PhotoImage
 from utils.ip_server import Ip_utils
+from pyuac import main_requires_admin
 
 def is_admin() -> bool:
     """
@@ -33,6 +34,7 @@ def rerun_as_admin():
         1
     )
 
+@main_requires_admin
 def main():
     interface_instance = interface()
     interface_instance.show()
@@ -96,7 +98,7 @@ class interface :
 
         # Buttons
         self.dhcp_button_image = PhotoImage(
-            file=path_join("build/assets/frame0/button_1.png"))
+            file=path_join("assets/enabled/button_1.png"))
         self.dhcp_button = Button(
             image=self.dhcp_button_image,
             borderwidth=0,
@@ -125,40 +127,40 @@ class interface :
         #     width=139.0,
         #     height=32.0
         # )
-        self.cancel_btn_image = PhotoImage(
-            file=path_join("build/assets/frame0/button_3.png"))
-        self.cancel_btn = Button(
-            image=self.cancel_btn_image,
-            borderwidth=0,
-            highlightthickness=0,
-            command=self.save_event,
-            relief="flat",
-            background="#fbfbfb"
-        )
-        self.cancel_btn.place(
-            x=417.0,
-            y=455.0,
-            width=120.0,
-            height=40.0
-        )
+        # self.cancel_btn_image = PhotoImage(
+        #     file=path_join("build/assets/frame0/button_3.png"))
+        # self.cancel_btn = Button(
+        #     image=self.cancel_btn_image,
+        #     borderwidth=0,
+        #     highlightthickness=0,
+        #     command=self.save_event,
+        #     relief="flat",
+        #     background="#fbfbfb"
+        # )
+        # self.cancel_btn.place(
+        #     x=417.0,
+        #     y=455.0,
+        #     width=120.0,
+        #     height=40.0
+        # )
 
-        self.save_btn_image = PhotoImage(
-            file=path_join("build/assets/frame0/button_4.png"))
-        self.save_btn = Button(
-            image=self.save_btn_image,
-            borderwidth=0,
-            highlightthickness=0,
-            command=self.cancel_event,
-            relief="flat",
-            background="#fbfbfb"
+        # self.save_btn_image = PhotoImage(
+        #     file=path_join("build/assets/frame0/button_4.png"))
+        # self.save_btn = Button(
+        #     image=self.save_btn_image,
+        #     borderwidth=0,
+        #     highlightthickness=0,
+        #     command=self.cancel_event,
+        #     relief="flat",
+        #     background="#fbfbfb"
 
-        )
-        self.save_btn.place(
-            x=554.0,
-            y=455.0,
-            width=120.0,
-            height=40.0
-        )
+        # )
+        # self.save_btn.place(
+        #     x=554.0,
+        #     y=455.0,
+        #     width=120.0,
+        #     height=40.0
+        # )
         self.ip_utils = Ip_utils()
 
     def buttons(self):
@@ -356,12 +358,12 @@ class interface :
             229.0,
             fill="#FBFBFB",
             outline="")
-        image = PhotoImage(file=path_join("build/assets/frame0/button_8.png"))
-        self.image_1_id = self.canvas.create_image(
-            83.0,
-            202.0,
-            image=image
-        )
+        # image = PhotoImage(file=path_join("build/assets/frame0/button_8.png"))
+        # self.image_1_id = self.canvas.create_image(
+        #     83.0,
+        #     202.0,
+        #     image=image
+        # )
 
         self.text_ids.append(self.canvas.create_text(
             137.0,
