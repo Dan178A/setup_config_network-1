@@ -39,7 +39,7 @@ def main():
     interface_instance = interface()
     interface_instance.show()
 
-def path_join(path: str) -> str:
+def path_join(path: str) -> str: 
     """
     La función `path_join` toma una ruta y devuelve una ruta absoluta.
 
